@@ -1,0 +1,33 @@
+<view>
+<view class="top-tab flex-wrp flex-tab " >
+  <view class="toptab flex-item {{currentNavtab==idx ? 'active' : ''}}" wx:for="{{navTab}}" wx:for-index="idx" wx:for-item="itemName" data-idx="{{idx}}" bindtap="switchTab">
+    {{itemName}}
+  </view>
+</view>
+<scroll-view class="swipers"> 
+  <swiper indicator-dots="{{indicatorDots}}"
+  autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+    <block wx:for="{{imgUrls}}">
+      <swiper-item class="swiper_img">
+        <image src="{{item}}" />
+      </swiper-item>
+    </block>
+  </swiper>
+   
+</scroll-view>
+<scroll-view  scroll-y="true" scroll-x="false">
+  <block wx:for="{{article}}" wx:for-index="idx" wx:for-item="item" data-idx="{{idx}}">
+        <view class="article-item">
+            <a class="">
+                <view>
+                    <image class="imgs" src="{{item.art_img}}"></image>
+                    <text class="title">{{item.title}}</text>
+                    <text class="art_other">{{item.createtime}} 评论：{{item.comments}} {{item.type}}</text>
+                    <text class="clear"></text>                    
+                </view>
+                
+            </a>                
+        </view>
+    </block> 
+</scroll-view>
+</view>
