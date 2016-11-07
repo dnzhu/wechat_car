@@ -3,8 +3,3 @@
     {{itemName}}
   </view>
 </view>
-<view class="brand">
-    <a class="">
-        <image class="brand_new" src="../../imgs/findcar/brand_new.png" />
-    </a>
-</view>
