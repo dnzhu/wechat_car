@@ -65,5 +65,35 @@ Page({
         });
       }
     });
+  },
+  upper: function(e) {
+    console.log("已到顶部");
+  },
+  lower: function(e) {
+    console.log("已到低部");
+    var that=this;
+    wx.showToast({
+      title: '加载中',
+      icon: 'loading',
+      duration: 5000
+    });
+    wx.request({
+          url: 'https://api.douban.com/v2/book/series/120/books',     
+          success: function(res) {
+            if(res.data.count==0){
+              return ;
+            }
+            //渲染到视图
+            that.setData({
+              bookList:that.data.bookList.concat(res.data.books),
+              count:that.data.count+res.data.count
+            });
+            wx.hideToast();
+          },
+          fail:function(res){
+            console.log(res.data);
+            console.log("fail");
+          }
+        });
   }
 });
