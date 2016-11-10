@@ -60,3 +60,6 @@
 .clear {
     clear: both;
 }
+.navigator-hover {
+    color:blue;
+}

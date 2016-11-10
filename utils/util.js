@@ -61,10 +61,8 @@ function discoveryNext(){
   return discovery_next.next;
 }
 
+function isFunction( obj ) { return typeof obj === 'function'; }
 
 
 module.exports.getData = getData;
 module.exports.getData2 = getData2;
-module.exports.getNext = getNext;
-module.exports.getDiscovery = getDiscovery;
-module.exports.discoveryNext = discoveryNext;

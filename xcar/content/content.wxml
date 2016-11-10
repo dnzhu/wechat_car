@@ -1,0 +1,4 @@
+新闻详情页  
+<view>
+<text>新闻id为：{{art_id}}</text>
+</view>
