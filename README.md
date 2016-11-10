@@ -3,3 +3,10 @@
 
 新闻页 <br/>
  ![Foo](https://github.com/dnzhu/wechat_kacar/blob/master/imgs/news.png)
+
+发现  <br/>
+豆瓣接口：https://api.douban.com/v2/book/series/101/books
+![douban](https://github.com/dnzhu/wechat_kacar/blob/master/imgs/discovery1.png)
+
+
+
