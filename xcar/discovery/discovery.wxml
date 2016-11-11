@@ -14,7 +14,7 @@
             </block>
         </swiper>
         <block wx:for="{{bookList}}">
-            <navigator hover-class="nav-hover" url="../detail/index?id={{item.id}}">
+            <navigator hover-class="nav-hover" url="../content/content?id={{item.id}}">
                 <view class="book_item"> 
                     <image mode="aspectFit" class="book_item_img" src="{{item.image}}"></image>
                     <view class="book_item_infos">

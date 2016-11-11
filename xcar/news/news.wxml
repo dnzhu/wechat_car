@@ -1,31 +1,41 @@
 <view>
-<view class="top-tab flex-wrp flex-tab " >
-  <view class="toptab flex-item {{currentNavtab==idx ? 'active' : ''}}" wx:for="{{navTab}}" wx:for-index="idx" wx:for-item="itemName" data-idx="{{idx}}" bindtap="switchTab">
-    {{itemName}}
+  <view class="top-tab flex-wrp flex-tab " >
+      <view class="toptab flex-item {{currentNavtab==idx ? 'active' : ''}}" wx:for="{{navTab}}" wx:for-index="idx" wx:for-item="itemName" data-idx="{{idx}}" bindtap="switchTab">
+        {{itemName}}
+      </view>
   </view>
-</view>
-<scroll-view class="swipers"> 
+
   <swiper indicator-dots="{{indicatorDots}}"
-  autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+    autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
     <block wx:for="{{imgUrls}}">
-      <swiper-item class="swiper_img">
-        <image src="{{item}}" />
+      <swiper-item>
+        <image src="{{item}}" class="slide-image"/>
       </swiper-item>
     </block>
   </swiper>
-   
-</scroll-view>
-<scroll-view  scroll-y="true" scroll-x="false">
-  <block wx:for="{{article}}" wx:for-index="idx" wx:for-item="item" data-idx="{{idx}}">
-        <view class="article-item">
-        <navigator url="../content/content?id={{item.art_id}}" hover-class="navigator-hover">
-                <view bindtap="bindItemTap">
-                    <image class="imgs" src="{{item.art_img}}"></image>
-                    <text class="title">{{item.title}}</text>
-                    <text class="art_other">{{item.createtime}} 评论：{{item.comments}} {{item.type}}</text>                    
+
+
+
+  <view class="info_list">
+      <block wx:for="{{article}}">
+          <navigator url="../content/content?id={{item.art_id}}" hover-class="navigator-hover">
+            <view class="weui_cell">
+                <view class="weui_cell_hd"><image src="{{item.art_img}}"></image></view>
+                <view class="weui_cell_bd">
+                    <view class="weui_cell_bd_p"> {{item.title}} </view>
+                    <view class="weui_cell_bd_other">
+                      <text class="node-date">{{item.createtime}}</text>
+                      <text class="node-msg">{{item.comments}}</text>
+                      <text class="node-cat">{{item.type}}</text>
+                    </view>
                 </view>
-          </navigator>      
-        </view>
-    </block> 
-</scroll-view>
+                <view class="with_arrow"></view>
+            </view>
+          </navigator>  
+      </block>
+    </view>
 </view>
+
+<loading hidden="{{hidden}}">
+  加载中...
+</loading>
